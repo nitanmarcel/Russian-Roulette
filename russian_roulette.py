@@ -8,10 +8,17 @@ import random
 import os
 import sys
 
-chambers = 6
-fatal_bullet = random.randint(1, chambers)
+chambers = input("Please enter the number of chambers (default = 6): ")
 
-for x in range(1, chambers + 1):
+if not chambers:
+	chambers = 5
+
+elif not chambers.isdigit():
+	quit("Invalid number of chambers!")
+
+fatal_bullet = random.randint(1, int(chambers))
+
+for x in range(1, int(chambers) + 1):
     input("Press enter to pull the trigger! ")
     if x == fatal_bullet:
         print("You just got served!")

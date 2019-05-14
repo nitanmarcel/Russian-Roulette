@@ -11,9 +11,9 @@ import sys
 chambers = 6
 fatal_bullet = random.randint(1, chambers)
 
-while True:
+for x in range(1, chambers + 1):
     input("Press enter to pull the trigger! ")
-    if random.randint(1, chambers) == fatal_bullet:
+    if x == fatal_bullet:
         print("You just got served!")
         print("Game Over")
         start_again = input("Do you want to start again? (y/n): ")
